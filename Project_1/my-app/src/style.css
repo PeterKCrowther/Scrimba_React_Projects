@@ -6,5 +6,11 @@ html { font-family: 'Inter', sans-serif; }
 
 body {
     margin: 0;
+
+}
+
+nav img {
+    width: 60px;
+    margin: 1rem;
 }
 
