@@ -11,6 +11,9 @@ body {
     margin: 0;
     background-color: #282D35;
     color: white;    
+    background-image: url('./images/react-logo-scrimba.png');
+    background-repeat: no-repeat;
+    background-position: right 200px;
 }
 
 nav {
@@ -38,31 +41,32 @@ nav .lead {
 
 nav .secondary {
     font-size: 16px;
+    font-weight: 600;
+    color: #deebf8;    
 }
 
-.main-cont {
+.main--cont {
     color: white;
 }
 
-.main-cont h1 {
+.main--cont h1 {
     font-size: 39px;
-    margin-left: 29px
+    margin-left: 29px;
+    margin-top: 57px;
 }
 
-.main-cont ul{
+.main--cont ul{
     color:white;
     list-style-type: none;
 }
 
-.main-cont ul li {
+.main--cont ul li {
     margin-bottom: 1rem;
     padding-left: 1rem;
 }
 
-.main-cont ul li::before {
+.main--cont ul li::marker {
     content: "\2022";
     color: #61DAFB;  
-    display: inline-block;
-    width: 1.5em;
-    margin-left: -1em;    
+    font-size: 1.4rem;
 }

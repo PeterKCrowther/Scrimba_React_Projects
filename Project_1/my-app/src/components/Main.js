@@ -4,7 +4,7 @@ export default Main;
 
 function Main() {
     return (
-        <div className="main-cont">
+        <div className="main--cont">
             <h1>Fun facts about React</h1>
             <ul>
                 <li>Was first released in 2013</li>
