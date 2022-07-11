@@ -8,7 +8,7 @@ export default Info;
 function Info() {
     return (
         <div className="info">
-            <img src={cp_dinosaur} alt="Big Cow" />
+            <img src={cp_dinosaur} alt="Crystal Palace Dinosaur" />
             <div className="info--details">
                 <h1>Crystal Palace Dinosaur</h1>
                 <h2>A Not Quite Right Iguanodon</h2>
