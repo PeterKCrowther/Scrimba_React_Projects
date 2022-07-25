@@ -1,0 +1,28 @@
+.frame {}
+
+.header--cont {
+  display: flex;
+  flex-direction: row;
+  background: #FFFFFF;
+  box-shadow: 0px 2.98256px 7.4564px rgba(0, 0, 0, 0.1);
+  /* position: absolute; */
+  width: 550px;
+  height: 70px;
+}
+
+.header--cont img {
+  position: relative;
+  height: 32px;
+  width: 82.02px;
+  margin: 20px 0 0 30px;
+}
+
+.splash-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.splash-box img {
+    padding-top: 26px;
+}

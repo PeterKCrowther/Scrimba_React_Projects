@@ -1,9 +1,17 @@
-import logo from './logo.svg';
+import Header from "./components/Header.js";
+import SplashBox from "./components/SplashBox.js";
+
 import './App.css';
+import './css/index.css';
 
 function App() {
   return (
-    <h1>App component</h1>
+    <div className="app">
+      <div className="frame">
+        <Header />
+        <SplashBox />
+      </div>
+    </div>
   );
 }
 
