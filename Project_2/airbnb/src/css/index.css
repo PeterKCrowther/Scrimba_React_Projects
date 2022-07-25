@@ -1,13 +1,20 @@
-.frame {}
+body {
+    background: gainsboro;
+}
+
+.frame {
+    background: white;
+    border-radius: 15px;
+}
 
 .header--cont {
   display: flex;
   flex-direction: row;
   background: #FFFFFF;
   box-shadow: 0px 2.98256px 7.4564px rgba(0, 0, 0, 0.1);
-  /* position: absolute; */
   width: 550px;
   height: 70px;
+  border-radius: 15px 15px 0 0;
 }
 
 .header--cont img {
@@ -20,9 +27,20 @@
 .splash-box {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    flex-wrap: wrap;
+    margin-left: 36px;
+    margin-right: 36px;
 }
 
 .splash-box img {
     padding-top: 26px;
+    margin: auto;
+}
+
+.splash-box h1 {
+    margin-bottom: 0;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 110%;
 }
