@@ -1,10 +1,10 @@
 import React from "react";
-import airbnbLogo from '../images/airbnb_300W.png';
+import airbnbLogo from '../images/airbnb.png';
 
 function Header () {
     return (
         <div className="header--cont">
-            <img src={airbnbLogo} alt="airbnb" width="140px"/>
+            <img src={airbnbLogo} alt="airbnb" className="airbnb" />
         </div>  
     );
 }

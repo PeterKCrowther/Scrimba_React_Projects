@@ -17,10 +17,10 @@ body {
   border-radius: 15px 15px 0 0;
 }
 
-.header--cont img {
+.header--cont img.airbnb {
   position: relative;
-  height: 32px;
-  width: 82.02px;
+  height: 25px;
+  width: 82px;
   margin: 20px 0 0 30px;
 }
 
@@ -32,7 +32,8 @@ body {
     margin-right: 36px;
 }
 
-.splash-box img {
+.splash-box img.group {
+    width: 396px;
     padding-top: 26px;
     margin: auto;
 }
