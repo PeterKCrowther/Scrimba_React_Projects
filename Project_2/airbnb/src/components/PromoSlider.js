@@ -4,7 +4,6 @@ import carouselImg2 from "../images/carousel_2.png";
 import carouselImg3 from "../images/carousel_3.png";
 import star from "../images/star.png";
 
-
 const slider = [
     {
         label: "SOLD OUT",
@@ -44,30 +43,18 @@ const slider = [
     }
 ];
 
-
 function PromoSlider() {
-
-    // var tifOptions = Object.keys(slider).map(function(key) {
-    //     return(<div className={key.toString()}>**</div>);
-    //     // return (<li key={number.toString()}>{slider[key]}</li>);
-    // });
-
-    // return tifOptions;
 
     let theList = () => { 
         let myStuff = Object.keys(slider).map(function(key) {
-      
-            let className = "item-".concat(key);
-            let imgAltName = "carousel item ".concat(key);
 
             let promoLabel = "";
-            
             if ( slider[key].label !== "") { promoLabel = (<div className="label">{slider[key].label}</div>) };
   
             return (
-                <li key={key.toString()} className={className}>
+                <li key={key.toString()} className={"item-".concat(key)}>
                     <div className="img--cont">
-                        <img src={slider[key].imgsrc} alt={imgAltName} className={className} />
+                        <img src={slider[key].imgsrc} alt={"carousel item ".concat(key)} className={"item-".concat(key)} />
                         {promoLabel}
                     </div>
                     <div className="ratings--cont">
@@ -82,26 +69,6 @@ function PromoSlider() {
 
         return myStuff;
     };
-
-    // return tifOptions;
-
-    // let theList = () => {
-    //     let complete = [];
-
-    //     for (const SliderKey in slider) {
-
-    //         let altName = "carousel item ".concat(SliderKey);
-    //         let className = "carousel item-".concat(SliderKey);
-
-    //         complete.push(
-    //             <li key={SliderKey.toString()}>
-    //                 <img src={slider[SliderKey].imgsrc} alt={altName} className={className} />
-    //             </li>
-    //         );
-    //     }
-
-    //     return complete;
-    // };
 
     return (
         <div className="carousel">
