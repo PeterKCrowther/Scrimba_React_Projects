@@ -48,19 +48,21 @@ function PromoSlider() {
     let theList = () => { 
         let myStuff = Object.keys(slider).map(function(key) {
 
+            let currentSlide = slider[key];
             let promoLabel = "";
-            if ( slider[key].label !== "") { promoLabel = (<div className="label">{slider[key].label}</div>) };
+            
+            if (currentSlide.label !== "") { promoLabel = (<div className="label">{currentSlide.label}</div>) };
   
             return (
                 <li key={key.toString()} className={"item-".concat(key)}>
                     <div className="img--cont">
-                        <img src={slider[key].imgsrc} alt={"carousel item ".concat(key)} className={"item-".concat(key)} />
+                        <img src={currentSlide.imgsrc} alt={"carousel item ".concat(key)} className={"item-".concat(key)} />
                         {promoLabel}
                     </div>
                     <div className="ratings--cont">
-                        <div><img src={star} alt="ratings star" className="star" /> {slider[key].rating} ({slider[key].numberOfRatings}) {slider[key].location}</div>
-                        <div>{slider[key].text}</div>
-                        <div className="pricing">{slider[key].pricePrefix} {slider[key].priceCurrencey}{slider[key].price} / {slider[key].priceUnit}</div>
+                        <div><img src={star} alt="ratings star" className="star" /> {currentSlide.rating} ({currentSlide.numberOfRatings}) {currentSlide.location}</div>
+                        <div>{currentSlide.text}</div>
+                        <div className="pricing">{currentSlide.pricePrefix} {currentSlide.priceCurrencey}{currentSlide.price} / {currentSlide.priceUnit}</div>
                     </div>
                 </li>
 
