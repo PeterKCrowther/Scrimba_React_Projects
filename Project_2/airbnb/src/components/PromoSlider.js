@@ -62,7 +62,7 @@ function PromoSlider() {
                     <div className="ratings--cont">
                         <div><img src={star} alt="ratings star" className="star" /> {currentSlide.rating} ({currentSlide.numberOfRatings}) {currentSlide.location}</div>
                         <div>{currentSlide.text}</div>
-                        <div className="pricing">{currentSlide.pricePrefix} {currentSlide.priceCurrencey}{currentSlide.price} / {currentSlide.priceUnit}</div>
+                        <div className="pricing"><span className="price">{currentSlide.pricePrefix} {currentSlide.priceCurrencey}{currentSlide.price}</span> / {currentSlide.priceUnit}</div>
                     </div>
                 </li>
 
