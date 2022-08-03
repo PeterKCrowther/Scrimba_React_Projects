@@ -106,6 +106,7 @@ body {
 
 .carousel ul li .ratings--cont {
     white-space: normal;
+    text-align: left;
 }
 
 .carousel ul li .ratings--cont img.star {
