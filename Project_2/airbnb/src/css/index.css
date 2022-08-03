@@ -10,32 +10,32 @@ body {
 }
 
 .header--cont {
-  display: flex;
-  flex-direction: row;
-  background: #FFFFFF;
-  box-shadow: 0px 2.98256px 7.4564px rgba(0, 0, 0, 0.1);
-  width: 550px;
-  height: 70px;
-  border-radius: 15px 15px 0 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    background: #FFFFFF;
+    box-shadow: 0px 2.98256px 7.4564px rgba(0, 0, 0, 0.1);
+    height: 70px;
+    border-radius: 15px 15px 0 0;
 }
 
 .header--cont img.airbnb {
-  position: relative;
-  height: 25px;
-  width: 82px;
-  margin: 20px 0 0 30px;
+    width: 82px;
+    margin-left: 20px;
 }
 
 .splash-box {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
-    margin-left: 36px;
-    margin-right: 36px;
+    margin: auto;
+    max-width: 1000px;
+    padding: 20px;
 }
 
 .splash-box img.group {
-    width: 396px;
+    width: 100%;
     padding-top: 26px;
     margin: auto;
 }
@@ -51,19 +51,17 @@ body {
 .carousel {
     width: 100%;
     display: block;
-    overflow: hidden;
+    overflow: auto;
     font-size: 12px;
 }
 
 .carousel ul {
-    display: flex;
-    flex-direction: row;
-    list-style-type: none;
-    width: 100%;
     background: white;
-    padding: 10px 10px 15px 25px;
     margin: 0;
     white-space: nowrap;
+    overflow: auto;
+    text-align: center;
+    padding: 10px;
 }
 
 .carousel ul li {
@@ -71,6 +69,7 @@ body {
     display: inline-block;
     width: 187px;
     margin: 0 10px;
+    text-align: center;
 }
 
 .carousel ul li .label {
@@ -85,6 +84,7 @@ body {
 .carousel .img--cont img {
     width: 185px;
     height: 247px;
+    border-radius: 10px;
 }
 
 .carousel ul li .pricing {
