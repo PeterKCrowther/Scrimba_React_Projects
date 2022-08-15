@@ -1,54 +1,14 @@
 import React from "react";
-import carouselImg1 from "../images/carousel_1.png";
-import carouselImg2 from "../images/carousel_2.png";
-import carouselImg3 from "../images/carousel_3.png";
-import star from "../images/star.png";
 
-const slider = [
-    {
-        label: "SOLD OUT",
-        imgsrc: carouselImg1,
-        rating: "5.0",
-        numberOfRatings: "6",
-        location: "USA",
-        text: "Life lessons with Katie Zaferes",
-        pricePrefix: "From ",
-        priceCurrencey: "$",
-        price: "136",
-        priceUnit: "person",
-    },
-    {
-        label: "ONLINE",
-        imgsrc: carouselImg2,
-        rating: "5.0",
-        numberOfRatings: "30",
-        location: "USA",
-        text: "Learn wedding photography",
-        pricePrefix: "From ",
-        priceCurrencey: "$",
-        price: "125",
-        priceUnit: "person",
-    },
-    {
-        label: "",
-        imgsrc: carouselImg3,
-        rating: "4.8",
-        numberOfRatings: "2",
-        location: "USA",
-        text: "Group Mountain Biking",
-        pricePrefix: "From ",
-        priceCurrencey: "$",
-        price: "50",
-        priceUnit: "person",
-    }
-];
+import star from "../images/star.png";
+import myCardData from "../feed/data.js";
 
 function PromoSlider() {
 
     let theList = () => { 
-        let myStuff = Object.keys(slider).map(function(key) {
+        let myStuff = Object.keys(myCardData).map(function(key) {
 
-            let currentSlide = slider[key];
+            let currentSlide = myCardData[key];
             let promoLabel = "";
             
             if (currentSlide.label !== "") { promoLabel = (<div className="label">{currentSlide.label}</div>) };
