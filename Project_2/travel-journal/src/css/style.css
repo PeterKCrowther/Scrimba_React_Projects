@@ -42,6 +42,7 @@ body {
     display: inherit;
     border-bottom: 1px solid #F5F5F5;
     padding-bottom: 1rem;
+    align-items: center;
 }
 
 .card .info {

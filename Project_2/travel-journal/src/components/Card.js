@@ -3,10 +3,10 @@ import cardData from "../data/data.js";
 
 export default function Card() {
 
-    let allCards = cardData.map( (eachCard) => {
+    let allCards = cardData.map( (eachCard, index) => {
 
         return (
-            <section className="card">
+            <section className="card" key={index}>
                 <div className="image--cont"><img alt={eachCard.title} src={`../images/${eachCard.imageUrl}`} /></div>
                 <div className="info">
                     <div className="info--cont">
