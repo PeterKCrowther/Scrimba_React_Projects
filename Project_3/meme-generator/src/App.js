@@ -1,14 +1,12 @@
 import './css/style.css';
-
-
 import Header from './components/Header.js';
-import FormDetails from './components/FormDetails.js';
+import Meme from './components/Meme.js';
 
 function App() {
   return (
     <div className="App">
       <Header />
-      <FormDetails />
+      <Meme />
     </div>
   );
 }
