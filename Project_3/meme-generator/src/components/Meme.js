@@ -5,8 +5,8 @@ export default function Meme() {
         <section className="form-cont">
             <form class="form">
                 <div className="form--inputs">
-                    <input className="form--first-input" value="" />
-                    <input className="form--second-input" value="" />
+                    <input type="text" className="form--first-input" value="" />
+                    <input type="text" className="form--second-input" value="" />
                 </div>
                 
                 <button className="form--submit-button" type="submit" >Get a new meme image</button>
