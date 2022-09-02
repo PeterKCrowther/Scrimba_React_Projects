@@ -5,11 +5,16 @@ import memesData from "../data/memesData.js"
 export default function Meme() {
 
     function randomImageClicker() {
-        const randomTo100 = randomIntFromInterval(1, 100);
-        console.log(randomTo100);
-        console.log(memesData.data.memes[randomTo100].url);
-    }
 
+        const memesArray = memesData.data.memes;
+        const memesArrayRandom = randomIntFromInterval(1, memesArray.length); 
+        const memesRandomImgURL = memesArray[memesArrayRandom].url;
+     
+        console.log(memesArrayRandom);
+        console.log(memesRandomImgURL);
+
+        return ( memesRandomImgURL );
+    }
 
     function randomIntFromInterval(min, max) { // min and max included 
         return Math.floor(Math.random() * (max - min + 1) + min)
@@ -18,7 +23,7 @@ export default function Meme() {
 
     return ( 
         <section className="form-cont">
-            <div class="form">
+            <div className="form">
                 <div className="form--inputs">
                     <input 
                         type="text" 
@@ -31,6 +36,7 @@ export default function Meme() {
                 </div>
                 
                 <button onClick={randomImageClicker} className="form--submit-button">Get a new meme image</button>
+                <img id="meme" src={randomImageClicker()} alt="meme" />
             </div>
         </section>
     );
