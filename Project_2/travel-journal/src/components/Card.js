@@ -1,9 +1,12 @@
 import React from "react";
-import cardData from "../data/data.js";
 
-export default function Card() {
+export default function Card(props) {
 
-    let allCards = cardData.map( (eachCard, index) => {
+    console.log(props);
+
+    const data = Object.values(props);
+
+    let allCards = data[0].map( (eachCard, index) => {
 
         return (
             <section className="card" key={index}>
