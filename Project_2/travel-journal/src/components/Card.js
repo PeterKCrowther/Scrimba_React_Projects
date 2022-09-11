@@ -1,7 +1,7 @@
 import React from "react";
 
 export default function Card(props) {
-
+ 
     console.log(props);
 
     const data = Object.values(props);
