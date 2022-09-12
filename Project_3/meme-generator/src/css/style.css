@@ -57,6 +57,7 @@ body {
 .form--submit-button {
     text-align: center;
     margin-top: 1rem;
+    margin-bottom: 1rem;
     width: 477px;
     height: 40px;
     background: linear-gradient(90.41deg, #711F8D 1.14%, #A818DA 100%);
@@ -70,4 +71,9 @@ body {
     border-color:  #D5D4D8;
     border-width: 1px;
     width: 100%;
+}
+
+.meme {
+    max-width: 100%;
+    min-width: 100%;
 }
