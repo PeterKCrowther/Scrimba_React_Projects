@@ -24,7 +24,7 @@ export default function Card(props) {
             </section>    
         );
     });
-
+ 
     return (
         <div className="cards">{allCards}</div>
     );
