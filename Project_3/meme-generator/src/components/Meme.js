@@ -24,7 +24,7 @@ export default function Meme() {
 
     function updateIMG () {
         setDisplayImg(
-            displayImgURL => getImageURL()
+            () => getImageURL()
         );
     }
 
