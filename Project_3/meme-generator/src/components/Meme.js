@@ -4,23 +4,19 @@ import memesData from "../data/memesData.js"
 
 export default function Meme() {
 
-    const[meme, setMeme] =useState({
+    const[meme, setMeme] = useState({
         topText: "",
         bottomText: "",
-        image: getImageURL()
+        image: randomMemeURL()
     });
 
-    function getImageURL() {
-
-        const memesArray = memesData.data.memes;
-
-        const memesArrayRandom = randomIntFromInterval(1, memesArray.length); 
-        const memesRandomImgURL = memesArray[memesArrayRandom].url;
-
-        return ( memesRandomImgURL );
+    function randomMemeURL() {
+        const memes = memesData.data.memes;
+        const randomPos = (randomInt(1, memes.length));
+        return memes[randomPos].url;
     }
 
-    function randomIntFromInterval(min, max) { // min and max included 
+    function randomInt(min, max) { // min and max included 
         return Math.floor(Math.random() * (max - min + 1) + min);
     }
 
@@ -35,11 +31,14 @@ export default function Meme() {
         });
     }    
 
-    function updateIMG () {
+    function updateIMG (event) {
+
+        console.log(event.type);
+
         setMeme( previousMeme => { 
             return {
                 ...previousMeme,
-                image: getImageURL()
+                image: randomMemeURL()
             }
         });
     }
@@ -50,15 +49,24 @@ export default function Meme() {
                 <div className="form--inputs">
                     <input 
                         type="text" 
-                        className="form--first-input" 
+                        className="form--first-input"
+                        name="topText"
+                        onChange={handleChange} 
                     />
                     <input 
                         type="text" 
                         className="form--second-input"
+                        name="bottomText"
+                        onChange={handleChange}                         
                     />
                 </div>
                 
-                <button onClick={updateIMG} className="form--submit-button">Get a new meme image</button>
+                <button 
+                    onClick={updateIMG} 
+                    className="form--submit-button"
+                    name="image-update">
+                    Get a new meme image
+                </button>
                 <img className="meme" src={meme.image} alt="meme" />
             </div>
         </section>
