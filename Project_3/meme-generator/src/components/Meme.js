@@ -4,13 +4,16 @@ import memesData from "../data/memesData.js"
 
 export default function Meme() {
 
-    const firstMemeImageURL = getImageURL();
-
-    const[displayImgURL, setDisplayImg] = useState(firstMemeImageURL);
+    const[meme, setMeme] =useState({
+        topText: "",
+        bottomText: "",
+        image: getImageURL()
+    });
 
     function getImageURL() {
 
         const memesArray = memesData.data.memes;
+
         const memesArrayRandom = randomIntFromInterval(1, memesArray.length); 
         const memesRandomImgURL = memesArray[memesArrayRandom].url;
 
@@ -21,11 +24,24 @@ export default function Meme() {
         return Math.floor(Math.random() * (max - min + 1) + min);
     }
 
+    function handleChange(event) {
+
+        const {name, type, value} = event.target;
+        setMeme( previousMeme => { 
+            return {
+                ...previousMeme,
+                [name] : value
+            }
+        });
+    }    
 
     function updateIMG () {
-        setDisplayImg(
-            () => getImageURL()
-        );
+        setMeme( previousMeme => { 
+            return {
+                ...previousMeme,
+                image: getImageURL()
+            }
+        });
     }
 
     return ( 
@@ -43,7 +59,7 @@ export default function Meme() {
                 </div>
                 
                 <button onClick={updateIMG} className="form--submit-button">Get a new meme image</button>
-                <img className="meme" src={displayImgURL} alt="meme" />
+                <img className="meme" src={meme.image} alt="meme" />
             </div>
         </section>
     );
