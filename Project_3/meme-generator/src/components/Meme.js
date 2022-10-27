@@ -22,7 +22,7 @@ export default function Meme() {
 
     function handleChange(event) {
 
-        const {name, type, value} = event.target;
+        const {name, value} = event.target;
         setMeme( previousMeme => { 
             return {
                 ...previousMeme,
@@ -32,9 +32,6 @@ export default function Meme() {
     }    
 
     function updateIMG (event) {
-
-        console.log(event.type);
-
         setMeme( previousMeme => { 
             return {
                 ...previousMeme,
@@ -51,12 +48,14 @@ export default function Meme() {
                         type="text" 
                         className="form--first-input"
                         name="topText"
+                        placeholder="Top text"
                         onChange={handleChange} 
                     />
                     <input 
                         type="text" 
                         className="form--second-input"
                         name="bottomText"
+                        placeholder="Bottom text"
                         onChange={handleChange}                         
                     />
                 </div>
