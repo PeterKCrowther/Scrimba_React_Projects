@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import memesData from "../data/memesData.js"
 
-
 export default function Meme() {
 
     const[meme, setMeme] = useState({
@@ -30,9 +29,7 @@ export default function Meme() {
         }
 
         getMemes()
-        
     }, [])
-        
 
     function randomMemeURL() {
         const randomPos = (randomInt(1, allMemes.length));
