@@ -1,7 +1,7 @@
 import React from "react";
 
 export default function Card(props) {
-
+ 
     console.log(props);
 
     const data = Object.values(props);
@@ -24,7 +24,7 @@ export default function Card(props) {
             </section>    
         );
     });
-
+ 
     return (
         <div className="cards">{allCards}</div>
     );
