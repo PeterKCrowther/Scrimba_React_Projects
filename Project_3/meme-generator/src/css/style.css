@@ -57,6 +57,7 @@ body {
 .form--submit-button {
     text-align: center;
     margin-top: 1rem;
+    margin-bottom: 1rem;
     width: 477px;
     height: 40px;
     background: linear-gradient(90.41deg, #711F8D 1.14%, #A818DA 100%);
@@ -70,4 +71,43 @@ body {
     border-color:  #D5D4D8;
     border-width: 1px;
     width: 100%;
+}
+
+.meme {
+    position: relative;
+    max-width: 100%;
+    min-width: 100%;
+}
+
+.meme--text {
+    position: absolute;
+    width: 80%;
+    text-align: center;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 15px 0;
+    padding: 0 5px;
+    font-family: impact, sans-serif;
+    font-size: 2em;
+    text-transform: uppercase;
+    color: white;
+    letter-spacing: 1px;
+    text-shadow:
+        2px 2px 0 #000,
+        -2px -2px 0 #000,
+        2px -2px 0 #000,
+        -2px 2px 0 #000,
+        0 2px 0 #000,
+        2px 0 0 #000,
+        0 -2px 0 #000,
+        -2px 0 0 #000,
+        2px 2px 5px #000;
+}
+
+.bottom {
+    bottom: 0;
+}
+
+.top {
+    top: 0;
 }
