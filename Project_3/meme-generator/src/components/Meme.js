@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import memesData from "../data/memesData.js"
+//import memesData from "../data/memesData.js"
 
 export default function Meme() {
 
@@ -11,6 +11,11 @@ export default function Meme() {
 
     const [allMemes, setAllMemes] = useState([]);
 
+    /**
+     * useEffect()
+     * sets state for allMemes from imgflip API
+     * sets inital image URL for current meme
+     */
     useEffect(() => {
         async function getMemes() {
             const res = await fetch("https://api.imgflip.com/get_memes")
@@ -31,17 +36,30 @@ export default function Meme() {
         getMemes()
     }, [])
 
+    /**
+     * Picks URL of meme at random allMemes
+     * @returns random allMeme URL
+     */
     function randomMemeURL() {
         const randomPos = (randomInt(1, allMemes.length));
         return allMemes[randomPos].url;
     }
 
+    /**
+     * Random int from a range
+     * @param {number} min Lowest number in range 
+     * @param {number} max Greatest number in range
+     * @returns random int from range provided
+     */
     function randomInt(min, max) { // min and max included 
         return Math.floor(Math.random() * (max - min + 1) + min);
     }
 
+    /**
+     * Sets value of meme object after input change
+     * @param {object} event DOM object from input change
+     */
     function handleChange(event) {
-
         const {name, value} = event.target;
         setMeme( previousMeme => { 
             return {
@@ -51,6 +69,10 @@ export default function Meme() {
         });
     }    
 
+    /**
+     * Updates image of meme object
+     * @param {object} event DOM object from button click
+     */
     function updateIMG (event) {
         setMeme( previousMeme => { 
             return {
