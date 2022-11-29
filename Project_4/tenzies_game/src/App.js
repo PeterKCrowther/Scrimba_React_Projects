@@ -1,11 +1,12 @@
 import React from "react";
 import './App.css';
+import Die from './components/Die.js';
 
 function App() {
   return (
     <div className="App">
       <main>
-        <p>Stuff Goes Here</p>
+        <Die />
       </main>
     </div>
   );
