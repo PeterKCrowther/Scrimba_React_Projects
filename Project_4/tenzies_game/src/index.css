@@ -48,3 +48,11 @@ button.roll {
   border: none;
   font-size: 1rem;
 }
+
+button.roll:focus {
+  outline: none;
+}
+
+button.roll:active {
+  box-shadow: inset 5px 5px 10px -3px rgba(0, 0, 0, 0.7);
+}
