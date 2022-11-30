@@ -16,15 +16,13 @@ function App() {
 
   const [dice, setDice] = React.useState( allNewDice() );
 
+  const theDice = dice.map( (die, index) => ( <Die key={index} value={die} /> ) );
+
   return (
     <div className="App">
       <main>
         <div className="die-cont">
-          { 
-            dice.map( (die, index) => { 
-              return ( <Die key={index} value={die} /> )
-            })
-          }
+          {theDice}
         </div>  
       </main>
     </div>
