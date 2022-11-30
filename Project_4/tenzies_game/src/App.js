@@ -16,6 +16,10 @@ function App() {
 
   const [dice, setDice] = React.useState( allNewDice() );
 
+  function rollDice() {
+    setDice( allNewDice() );
+  }
+
   const theDice = dice.map( (die, index) => ( <Die key={index} value={die} /> ) );
 
   return (
@@ -23,7 +27,8 @@ function App() {
       <main>
         <div className="die-cont">
           {theDice}
-        </div>  
+        </div> 
+        <button className="roll" onClick={rollDice}>Roll</button> 
       </main>
     </div>
   );
