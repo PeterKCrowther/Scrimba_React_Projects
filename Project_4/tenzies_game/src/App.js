@@ -14,7 +14,7 @@ function App() {
       diceArray.push({ 
         value: value, 
         isHeld: false,
-        nanoid: nanoid 
+        nanoid: nanoid() 
       });
     }
     return diceArray;
