@@ -6,20 +6,25 @@ function App() {
 
   let randomNumber1to6 = () => Math.floor(Math.random() * 6 + 1);
 
+  function allNewDice() {
+    let diceArray = [];
+    for(let loop = 0; loop < 10; loop++) {
+      diceArray.push( randomNumber1to6() );
+    }
+    return diceArray;
+  }
+
+  const [dice, setDice] = React.useState( allNewDice() );
+
   return (
     <div className="App">
       <main>
         <div className="die-cont">
-          <Die value={randomNumber1to6()} />
-          <Die value={randomNumber1to6()} />
-          <Die value={randomNumber1to6()} />
-          <Die value={randomNumber1to6()} />
-          <Die value={randomNumber1to6()} />
-          <Die value={randomNumber1to6()} />
-          <Die value={randomNumber1to6()} />
-          <Die value={randomNumber1to6()} />
-          <Die value={randomNumber1to6()} />
-          <Die value={randomNumber1to6()} />
+          { 
+            dice.map( (die, index) => { 
+              return ( <Die key={index} value={die} /> )
+            })
+          }
         </div>  
       </main>
     </div>
