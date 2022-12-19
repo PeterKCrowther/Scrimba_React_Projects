@@ -13,7 +13,7 @@ function App() {
       const value = randomNumber1to6();
       diceArray.push({ 
         value: value, 
-        isHeld: false,
+        isHeld: true,
         id: nanoid() 
       });
     }
@@ -26,7 +26,12 @@ function App() {
     setDice( allNewDice() );
   }
 
-  const theDice = dice.map( (die, index) => ( <Die key={die.id} value={die.value} /> ) );
+  const theDice = dice.map( (die, index) => 
+    ( <Die 
+        key={die.id} 
+        value={die.value}  
+        isHeld={die.isHeld} /> ) 
+  );
 
   return (
     <div className="App">
