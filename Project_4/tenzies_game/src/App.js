@@ -14,7 +14,7 @@ function App() {
       diceArray.push({ 
         value: value, 
         isHeld: false,
-        nanoid: nanoid() 
+        id: nanoid() 
       });
     }
     return diceArray;
@@ -26,7 +26,7 @@ function App() {
     setDice( allNewDice() );
   }
 
-  const theDice = dice.map( (die, index) => ( <Die key={die.nanoid} value={die.value} /> ) );
+  const theDice = dice.map( (die, index) => ( <Die key={die.id} value={die.value} /> ) );
 
   return (
     <div className="App">
