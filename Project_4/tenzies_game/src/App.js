@@ -13,7 +13,7 @@ function App() {
       const value = randomNumber1to6();
       diceArray.push({ 
         value: value, 
-        isHeld: true,
+        isHeld: false,
         id: nanoid() 
       });
     }
@@ -26,11 +26,16 @@ function App() {
     setDice( allNewDice() );
   }
 
+  function holdDice(id) {
+    console.log(id);
+  }
+
   const theDice = dice.map( (die, index) => 
     ( <Die 
         key={die.id} 
         value={die.value}  
-        isHeld={die.isHeld} /> ) 
+        isHeld={die.isHeld}
+        holdDice={ () => { holdDice(die.id) }  } /> ) 
   );
 
   return (

@@ -8,6 +8,6 @@ export default function Die(props) {
         : "die-cont__item";
 
     return (
-        <div className={dieClasses}>{props.value}</div>
+        <div className={dieClasses} onClick={props.holdDice}>{props.value}</div>
     );
 }
