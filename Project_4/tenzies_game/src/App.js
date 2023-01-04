@@ -1,4 +1,4 @@
-import React, { useEffect} from 'react';
+import React from 'react';
 import './App.css';
 import Die from './components/Die.js';
 import {nanoid} from "nanoid"
@@ -10,7 +10,7 @@ function App() {
   const [dice, setDice] = React.useState( allNewDice() );
   const [tenzies, setTenzies] = React.useState(false); 
 
-  useEffect(() => {
+  React.useEffect(() => {
     console.log("Dice state changed");
   }, [dice]);
 
