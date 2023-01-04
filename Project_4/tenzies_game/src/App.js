@@ -10,9 +10,34 @@ function App() {
   const [dice, setDice] = React.useState( allNewDice() );
   const [tenzies, setTenzies] = React.useState(false); 
 
-  React.useEffect(() => {
-    console.log("Dice state changed");
-  }, [dice]);
+  React.useEffect(() => {  
+    ( allDieHeld() && allDieValuesMatch() )
+      ? setTenzies(true)
+      : setTenzies(false)     
+  }, [dice])
+
+  React.useEffect(() => {  
+    ( tenzies )
+      ? gameComplete()
+      : gameIncomplete()     
+  }, [tenzies]) 
+
+  function allDieHeld() {
+    return dice.every( (die) => die.isHeld );
+  }
+
+  function allDieValuesMatch() {
+    const dieValue = dice[0].value;
+    return dice.every( (die) => dieValue === die.value );
+  }
+      
+  function gameComplete() {
+    console.log("You won!");           
+  }  
+
+  function gameIncomplete() {
+    console.log("Keep Going!");           
+  }   
 
   function createDie() {
     return { 
