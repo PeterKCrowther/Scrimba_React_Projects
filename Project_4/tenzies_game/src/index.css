@@ -43,6 +43,15 @@ main {
   background: #59e391;
 }
 
+.title {
+  margin: 0;
+}
+
+.instructions {
+  padding: 0 1.5rem;
+  text-align: center;
+}
+
 button.roll {
   background: #5035ff;
   border-radius: 4px;
