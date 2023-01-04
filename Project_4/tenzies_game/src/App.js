@@ -7,15 +7,18 @@ function App() {
 
   let randomNumber1to6 = () => Math.floor(Math.random() * 6 + 1);
 
+  function createDie() {
+    return { 
+      value: randomNumber1to6(), 
+      isHeld: false,
+      id: nanoid() 
+    }
+  }
+
   function allNewDice() {
     let diceArray = [];
     for(let loop = 0; loop < 10; loop++) {
-      const value = randomNumber1to6();
-      diceArray.push({ 
-        value: value, 
-        isHeld: false,
-        id: nanoid() 
-      });
+      diceArray.push(createDie());
     }
     return diceArray;
   }
@@ -23,11 +26,21 @@ function App() {
   const [dice, setDice] = React.useState( allNewDice() );
 
   function rollDice() {
-    setDice( allNewDice() );
+
+    setDice( (oldDice) => {
+      const replacementDice = oldDice.map(
+        (eachDie) => {
+          return (eachDie.isHeld)
+            ? eachDie
+            : createDie()
+        }
+      );
+      return replacementDice;
+    })
+
   }
 
   function holdDice(id) {
-    //console.log(id);
 
     setDice( (oldDice) => {
       const replacementDice = oldDice.map(
