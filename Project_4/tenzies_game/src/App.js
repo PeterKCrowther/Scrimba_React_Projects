@@ -1,11 +1,18 @@
-import React from "react";
+import React, { useEffect} from 'react';
 import './App.css';
 import Die from './components/Die.js';
-import {nanoid} from "nanoid";
+import {nanoid} from "nanoid"
 
 function App() {
-
+ 
   let randomNumber1to6 = () => Math.floor(Math.random() * 6 + 1);
+
+  const [dice, setDice] = React.useState( allNewDice() );
+  const [tenzies, setTenzies] = React.useState(false); 
+
+  useEffect(() => {
+    console.log("Dice state changed");
+  }, [dice]);
 
   function createDie() {
     return { 
@@ -22,8 +29,6 @@ function App() {
     }
     return diceArray;
   }
-
-  const [dice, setDice] = React.useState( allNewDice() );
 
   function rollDice() {
 
