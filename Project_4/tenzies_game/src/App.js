@@ -56,6 +56,17 @@ function App() {
     return diceArray;
   }
 
+  function buttonClick() {
+    ( tenzies )
+      ? gameReset()
+      : rollDice()
+  }
+
+  function gameReset() {
+    setTenzies(false);
+    setDice( () => allNewDice() );
+  }
+
   function rollDice() {
 
     setDice( (oldDice) => {
@@ -103,7 +114,7 @@ function App() {
         <div className="die-cont">
           {theDice}
         </div> 
-        <button className="roll" onClick={rollDice}>
+        <button className="roll" onClick={buttonClick}>
           { (tenzies) ? "New Game" : "Roll" }  
         </button> 
       </main>
