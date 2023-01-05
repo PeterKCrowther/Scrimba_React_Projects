@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import Die from './components/Die.js';
 import {nanoid} from "nanoid"
+import Confetti from './components/Confetti';
 
 function App() {
  
@@ -96,12 +97,15 @@ function App() {
   return (
     <div className="App">
       <main>
+        { (tenzies) ? <Confetti /> : "" }
         <h1 className="title">Tenzies</h1>
         <p className="instructions">Roll until all dice are the same. Click each die to freeze it at its current value between rolls.</p>
         <div className="die-cont">
           {theDice}
         </div> 
-        <button className="roll" onClick={rollDice}>Roll</button> 
+        <button className="roll" onClick={rollDice}>
+          { (tenzies) ? "New Game" : "Roll" }  
+        </button> 
       </main>
     </div>
   );
