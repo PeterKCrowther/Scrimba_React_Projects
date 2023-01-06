@@ -3,13 +3,18 @@ import './App.css';
 import Die from './components/Die.js';
 import {nanoid} from "nanoid"
 import Confetti from './components/Confetti';
+import CurrentScore from './components/CurrentScore';
+import BestScore from './components/BestScore';
 
 function App() {
  
   let randomNumber1to6 = () => Math.floor(Math.random() * 6 + 1);
 
   const [dice, setDice] = React.useState( allNewDice() );
+  const [currentScore, setCurrentScore] = React.useState(0); 
+  const [bestScore, setBestScore] = React.useState(0);   
   const [tenzies, setTenzies] = React.useState(false); 
+
 
   React.useEffect(() => {  
     ( allDieHeld() && allDieValuesMatch() )
@@ -57,14 +62,21 @@ function App() {
   }
 
   function buttonClick() {
-    ( tenzies )
-      ? gameReset()
-      : rollDice()
+    if ( tenzies )
+      {gameReset()}
+    else {
+      scorePlusOne();
+      rollDice();
+    }
   }
 
   function gameReset() {
     setTenzies(false);
     setDice( () => allNewDice() );
+  }
+
+  function scorePlusOne() {
+    setCurrentScore( (oldScore) => (oldScore + 1) );
   }
 
   function rollDice() {
@@ -111,6 +123,19 @@ function App() {
         { tenzies && <Confetti /> }
         <h1 className="title">Tenzies</h1>
         <p className="instructions">Roll until all dice are the same. Click each die to freeze it at its current value between rolls.</p>
+
+        <table className="scores">
+          <thead>
+            <tr><td>Your Score</td><td>Best Score</td></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <CurrentScore score={currentScore} />
+              <BestScore score={bestScore} />
+            </tr>
+          </tbody>            
+        </table>
+
         <div className="die-cont">
           {theDice}
         </div> 
