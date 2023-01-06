@@ -12,9 +12,8 @@ function App() {
 
   const [dice, setDice] = React.useState( allNewDice() );
   const [currentScore, setCurrentScore] = React.useState(0); 
-  const [bestScore, setBestScore] = React.useState(0);   
+  const [bestScore, setBestScore] = React.useState(getBestScore());   
   const [tenzies, setTenzies] = React.useState(false); 
-
 
   React.useEffect(() => {  
     ( allDieHeld() && allDieValuesMatch() )
@@ -28,6 +27,20 @@ function App() {
       : gameIncomplete()     
   }, [tenzies]) 
 
+  function getBestScore() {
+    const savedBestScore = window.localStorage.getItem('savedBestScore');
+    return (savedBestScore !== null)
+      ? parseInt(savedBestScore)
+      : 0
+  }
+
+  function checkBestScore() {
+    if (currentScore < bestScore) {
+      setBestScore(currentScore);
+      window.localStorage.setItem('savedBestScore', ( currentScore.toString() ) );
+    }
+  }
+
   function allDieHeld() {
     return dice.every( (die) => die.isHeld );
   }
@@ -38,7 +51,8 @@ function App() {
   }
       
   function gameComplete() {
-    console.log("You won!");           
+    console.log("You won!"); 
+    checkBestScore();          
   }  
 
   function gameIncomplete() {
@@ -71,6 +85,7 @@ function App() {
   }
 
   function gameReset() {
+    setCurrentScore(0);
     setTenzies(false);
     setDice( () => allNewDice() );
   }
@@ -80,7 +95,6 @@ function App() {
   }
 
   function rollDice() {
-
     setDice( (oldDice) => {
       const replacementDice = oldDice.map(
         (eachDie) => {
@@ -91,11 +105,9 @@ function App() {
       );
       return replacementDice;
     })
-
   }
 
   function holdDice(id) {
-
     setDice( (oldDice) => {
       const replacementDice = oldDice.map(
         (die) => { 
@@ -105,7 +117,6 @@ function App() {
         }
       );
       return replacementDice;
-
     } )
   }
 
