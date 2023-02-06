@@ -1,10 +1,22 @@
 import './css/styles.css';
 
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 
 function App() {
     
   const [text, setText] = useState("");
+  const [timeLeft, setTimeLeft] = useState(10);
+ 
+  useEffect(() => {     
+    console.log("Time left: " + timeLeft)
+
+    if ( timeLeft > 0 ) {
+      setTimeout(() => {
+        setTimeLeft( (time) => ( time-1 ) )
+      }, (1000)); 
+    }   
+}, [timeLeft]);    
+
   
   function textChange(event) {
       const {value} = event.target;   
@@ -27,7 +39,7 @@ function App() {
               name="inputText"
               onChange={textChange}
           />
-          <h4>Time reminaing: ???</h4>
+          <h4>Time reminaing: {timeLeft}</h4>
           <button
                 onClick={() => countWords(text)}>
                 Start
