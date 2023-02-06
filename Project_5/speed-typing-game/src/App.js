@@ -1,17 +1,31 @@
 import './css/styles.css';
 
-import React from "react";
+import React, {useState} from "react";
 
 function App() {
-    return (
-        <>
-            <h1>How fast can you type?</h1>
-            <textarea />
-            <h4>Time Remaining</h4>
-            <button>My Button</button>
-            <h1>Word Count</h1>
-        </>
-    )
+    
+  const [textArea, setTextArea] = useState({inputText: ""});
+  
+  function textChange(event) {
+      const {name, value} = event.target;   
+      setTextArea(prevStat => {
+          return {...prevStat, [name]: value }
+      })
+  }
+  
+  return (
+      <div>
+          <h1>How fast do you type?</h1>
+          <textarea 
+              value={textArea.inputText}
+              name="inputText"
+              onChange={textChange}
+          />
+          <h4>Time reminaing: ???</h4>
+          <button>Start</button>
+          <h1>Word count: ???</h1>
+      </div>
+  )
 }
 
-export default App;
+export default App
