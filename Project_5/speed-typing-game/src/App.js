@@ -6,16 +6,17 @@ function App() {
     
   const [text, setText] = useState("");
   const [timeLeft, setTimeLeft] = useState(10);
+  const [startGame, setStartGame] = useState(false);
  
   useEffect(() => {     
     console.log("Time left: " + timeLeft)
 
-    if ( timeLeft > 0 ) {
+    if ( startGame && timeLeft > 0 ) {
       setTimeout(() => {
         setTimeLeft( (time) => ( time-1 ) )
       }, (1000)); 
     }   
-}, [timeLeft]);    
+}, [timeLeft, startGame]);    
 
   
   function textChange(event) {
@@ -41,7 +42,7 @@ function App() {
           />
           <h4>Time reminaing: {timeLeft}</h4>
           <button
-                onClick={() => countWords(text)}>
+                onClick={() => setStartGame(true)}>
                 Start
             </button>
           <h1>Word count: ???</h1>
