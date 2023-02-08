@@ -16,7 +16,7 @@ function App() {
         setTimeLeft( (time) => ( time-1 ) )
       }, (1000)); 
     }   
-}, [timeLeft, startGame]);    
+}, [startGame, timeLeft]);    
 
   
   function textChange(event) {
