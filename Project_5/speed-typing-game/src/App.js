@@ -5,9 +5,16 @@ import React, {useState, useEffect} from "react";
 function App() {
     
   const [text, setText] = useState("");
+  const [wordCount, setWordCount] = useState(countWords(text));
   const [timeLeft, setTimeLeft] = useState(5);
   const [gameStarted, setGameStarted] = useState(false);
  
+  useEffect( () => {
+      setWordCount( () => countWords(text) )
+    }
+    ,[timeLeft]
+  )
+
   useEffect(() => {     
     console.log("Time left: " + timeLeft)
 
@@ -32,7 +39,9 @@ function App() {
 
   function countWords(text) {
     const spacesFoundArr = text.match(/[^\s]+/g);
-    console.log( spacesFoundArr ? spacesFoundArr.length : 0);
+    const noOfWords = ( spacesFoundArr ? spacesFoundArr.length : 0);
+    console.log( noOfWords );
+    return noOfWords;
   }
   
   return (
@@ -48,7 +57,7 @@ function App() {
                 onClick={() => setGameStarted(true)}>
                 Start
             </button>
-          <h1>Word count: ???</h1>
+          <h1>Word count: {wordCount}</h1>
       </div>
   )
 }
