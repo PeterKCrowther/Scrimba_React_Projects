@@ -1,6 +1,6 @@
 import './css/styles.css';
 
-import React, {useState, useEffect} from "react";
+import React, {useState, useEffect , useRef} from "react";
 
 function App() {
 
@@ -10,24 +10,26 @@ function App() {
   const [wordCount, setWordCount] = useState(countWords(text));
   const [timeLeft, setTimeLeft] = useState(gameLenthInSecs);
   const [gameStarted, setGameStarted] = useState(false);
- 
-  useEffect( () => {
-      setWordCount( () => countWords(text) )
-    }
-    ,[timeLeft]
-  )
 
+  const textareaRef = useRef(null)
+ 
   function startGame() {
     setWordCount(0)
     setText("")
     setTimeLeft(gameLenthInSecs)
     setGameStarted(true)
+    textareaRef.current.disabled = false
+    textareaRef.current.focus()
   } 
 
   function endGame() {
-    setGameStarted(false) 
-    console.log("isTimeRunning set to false");   
+    setGameStarted(false)   
   }
+
+  useEffect( () => {
+    setWordCount( () => countWords(text) )
+  }
+  ,[timeLeft])
 
   useEffect(() => {     
     console.log("Time left: " + timeLeft)
@@ -39,7 +41,7 @@ function App() {
     } else if ( timeLeft === 0 ) { //Timer at zero
       endGame()
     }
-}, [gameStarted, timeLeft]);    
+  }, [gameStarted, timeLeft]);    
 
   
   function textChange(event) {
@@ -61,6 +63,7 @@ function App() {
       <div>
           <h1>How fast do you type?</h1>
           <textarea 
+              ref={textareaRef}
               value={text}
               name="inputText"
               onChange={textChange}
