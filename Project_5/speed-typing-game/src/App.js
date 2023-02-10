@@ -24,7 +24,6 @@ function App() {
     setGameStarted(true)
   } 
 
-
   function endGame() {
     setGameStarted(false) 
     console.log("isTimeRunning set to false");   
@@ -69,7 +68,6 @@ function App() {
           />
           <h4>Time reminaing: {timeLeft}</h4>
           <button
-                //onClick={() => setGameStarted(true)}>
                 onClick={() => startGame()}
                 disabled={gameStarted}   
                 >
