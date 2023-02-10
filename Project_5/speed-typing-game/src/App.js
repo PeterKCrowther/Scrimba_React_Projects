@@ -25,8 +25,12 @@ function App() {
       setGameStarted(true)
     } else if (timeLeft > 0){
       setGameStarted(true)
-    }
-    
+    } 
+  }
+
+  function endGame() {
+    setGameStarted(false)
+    console.log("isTimeRunning set to false");   
   }
 
   useEffect(() => {     
@@ -37,8 +41,7 @@ function App() {
         setTimeLeft( (time) => ( time-1 ) )
       }, (1000)); 
     } else if ( timeLeft === 0 ) { //Timer at zero
-      setGameStarted(false)
-      console.log("isTimeRunning set to false");      
+      endGame()
     }
 }, [gameStarted, timeLeft]);    
 
