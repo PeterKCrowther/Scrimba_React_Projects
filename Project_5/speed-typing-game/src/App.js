@@ -3,10 +3,12 @@ import './css/styles.css';
 import React, {useState, useEffect} from "react";
 
 function App() {
+
+  const gameLenthInSecs = 5;
     
   const [text, setText] = useState("");
   const [wordCount, setWordCount] = useState(countWords(text));
-  const [timeLeft, setTimeLeft] = useState(5);
+  const [timeLeft, setTimeLeft] = useState(gameLenthInSecs);
   const [gameStarted, setGameStarted] = useState(false);
  
   useEffect( () => {
@@ -14,6 +16,18 @@ function App() {
     }
     ,[timeLeft]
   )
+
+  function startButtonClick() {
+    if (timeLeft === 0) {
+      setWordCount(0)
+      setText("")
+      setTimeLeft(gameLenthInSecs)
+      setGameStarted(true)
+    } else if (timeLeft > 0){
+      setGameStarted(true)
+    }
+    
+  }
 
   useEffect(() => {     
     console.log("Time left: " + timeLeft)
@@ -48,13 +62,14 @@ function App() {
       <div>
           <h1>How fast do you type?</h1>
           <textarea 
-              value={text.inputText}
+              value={text}
               name="inputText"
               onChange={textChange}
           />
           <h4>Time reminaing: {timeLeft}</h4>
           <button
-                onClick={() => setGameStarted(true)}>
+                //onClick={() => setGameStarted(true)}>
+                onClick={() => startButtonClick()}>
                 Start
             </button>
           <h1>Word count: {wordCount}</h1>
