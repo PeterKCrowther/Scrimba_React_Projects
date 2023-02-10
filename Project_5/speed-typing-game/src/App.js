@@ -10,6 +10,7 @@ function App() {
   const [wordCount, setWordCount] = useState(countWords(text));
   const [timeLeft, setTimeLeft] = useState(gameLenthInSecs);
   const [gameStarted, setGameStarted] = useState(false);
+  const [buttonDisabled, setButtonDisabled] = useState(false)
  
   useEffect( () => {
       setWordCount( () => countWords(text) )
@@ -21,12 +22,14 @@ function App() {
     setWordCount(0)
     setText("")
     setTimeLeft(gameLenthInSecs)
+    setButtonDisabled(true)
     setGameStarted(true)
   } 
 
 
   function endGame() {
     setGameStarted(false)
+    setButtonDisabled(false)    
     console.log("isTimeRunning set to false");   
   }
 
@@ -69,7 +72,9 @@ function App() {
           <h4>Time reminaing: {timeLeft}</h4>
           <button
                 //onClick={() => setGameStarted(true)}>
-                onClick={() => startGame()}>
+                onClick={() => startGame()}
+                disabled={buttonDisabled}
+                >
                 Start
             </button>
           <h1>Word count: {wordCount}</h1>
