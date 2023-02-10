@@ -17,16 +17,13 @@ function App() {
     ,[timeLeft]
   )
 
-  function startButtonClick() {
-    if (timeLeft === 0) {
-      setWordCount(0)
-      setText("")
-      setTimeLeft(gameLenthInSecs)
-      setGameStarted(true)
-    } else if (timeLeft > 0){
-      setGameStarted(true)
-    } 
-  }
+  function startGame() {
+    setWordCount(0)
+    setText("")
+    setTimeLeft(gameLenthInSecs)
+    setGameStarted(true)
+  } 
+
 
   function endGame() {
     setGameStarted(false)
@@ -72,7 +69,7 @@ function App() {
           <h4>Time reminaing: {timeLeft}</h4>
           <button
                 //onClick={() => setGameStarted(true)}>
-                onClick={() => startButtonClick()}>
+                onClick={() => startGame()}>
                 Start
             </button>
           <h1>Word count: {wordCount}</h1>
