@@ -3,11 +3,10 @@ const CapstoneContext = React.createContext();
 
 function CapstoneContextProvider(props) {
 
-    const [state, useSate] = useState("");
-
+    const [photos, usePhotos] = useState([]);
 
     return (
-        <CapstoneContext.Provider value={ state }>
+        <CapstoneContext.Provider value={ {photos: photos} }>
             {props.children}
         </CapstoneContext.Provider>
     )
