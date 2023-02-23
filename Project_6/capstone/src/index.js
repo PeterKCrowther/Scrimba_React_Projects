@@ -2,7 +2,7 @@ import React from "react"
 import ReactDOM from "react-dom/client"
 import {BrowserRouter} from 'react-router-dom';
 import App from "./App"
-import {CapstoneContextProvider} from "./context/capstoneContext.js"
+import {CapstoneContextProvider} from "./context/CapstoneContext.js"
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

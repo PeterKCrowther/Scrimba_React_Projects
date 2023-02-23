@@ -17,12 +17,12 @@ function CapstoneContextProvider(props) {
         []
     )
 
-    useEffect(
-        () => {
-            console.log(photos);       
-        }, 
-        [photos]
-    )
+    // useEffect(
+    //     () => {
+    //         console.log(photos);       
+    //     }, 
+    //     [photos]
+    // )
 
 
 
