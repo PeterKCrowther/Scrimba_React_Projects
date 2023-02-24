@@ -9,7 +9,7 @@ function Photos() {
     const context = useContext(CapstoneContext);
     const photos = context.photos;
 
-     console.log(photos)
+    //console.log(photos)
 
     const imgElements = photos.map( 
         (img, index) =>         
@@ -23,7 +23,6 @@ function Photos() {
 
     return (
         <main className="photos">
-            <h1>Images go here</h1>
             {imgElements}
         </main>
     )
