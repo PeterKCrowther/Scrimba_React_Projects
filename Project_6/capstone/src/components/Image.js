@@ -12,9 +12,9 @@ function Image({img, className}) {
         const filledHeartIcon = <i className="ri-heart-fill favorite" onClick={() => (toggleFavorite(img.id))} ></i>
         const isFavorited = img.isFavorite
 
-        return (!isFavorited && hover && emptyHeartIcon)
+        return  (isFavorited && filledHeartIcon)
                 ||
-               (isFavorited && filledHeartIcon)
+                (hover && emptyHeartIcon)
     }
 
     function cartIcon(){
