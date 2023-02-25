@@ -1,9 +1,13 @@
-import React, {useState, useEffect} from "react"
+import React, {useState, useContext} from "react"
+import {CapstoneContext} from "../context/CapstoneContext.js"
 
 function Image({img, className}) {
-
+    
+    const context = useContext(CapstoneContext); 
+    const toggleFavorite = context.toggleFavorite;
     const [hover, setHover] = useState(false)
-    const heartIcon = <i className="ri-heart-line favorite"></i>
+
+    const heartIcon = <i className="ri-heart-line favorite" onClick={() => (toggleFavorite(img.id))}  ></i>
     const addToCartIcon = <i className="ri-add-circle-line cart"></i>
 
     function pointerEnteredImgCont() {

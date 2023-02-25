@@ -1,7 +1,6 @@
 import React, {useContext} from "react";
 import Image from "../components/Image.js"
 import {getClass} from "../utils"
-
 import {CapstoneContext} from "../context/CapstoneContext.js"
 
 function Photos() {
