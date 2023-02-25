@@ -30,12 +30,12 @@ function CapstoneContextProvider(props) {
         []
     )
 
-    // useEffect(
-    //     () => {
-    //         console.log(photos);       
-    //     }, 
-    //     [photos]
-    // )
+    useEffect(
+        () => {
+            console.log(photos);       
+        }, 
+        [photos]
+    )
 
     return (
         <CapstoneContext.Provider value={ {photos: photos, toggleFavorite: toggleFavorite} }>

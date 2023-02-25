@@ -7,8 +7,22 @@ function Image({img, className}) {
     const toggleFavorite = context.toggleFavorite;
     const [hover, setHover] = useState(false)
 
-    const heartIcon = <i className="ri-heart-line favorite" onClick={() => (toggleFavorite(img.id))}  ></i>
-    const addToCartIcon = <i className="ri-add-circle-line cart"></i>
+    function heartIcon() {
+        const emptyHeartIcon = <i className="ri-heart-line favorite" onClick={() => (toggleFavorite(img.id))} ></i>
+        const filledHeartIcon = <i className="ri-heart-fill favorite" onClick={() => (toggleFavorite(img.id))} ></i>
+        const isFavorited = img.isFavorite
+
+        return (!isFavorited && hover && emptyHeartIcon)
+                ||
+               (isFavorited && filledHeartIcon)
+    }
+
+    function cartIcon(){
+        const addToCartIcon = <i className="ri-add-circle-line cart"></i>
+        return (hover && addToCartIcon)
+    } 
+
+    
 
     function pointerEnteredImgCont() {
         setHover(() => true)
@@ -24,8 +38,8 @@ function Image({img, className}) {
             onMouseOver={() => pointerEnteredImgCont()}  
             onMouseOut={() => pointerExitedImgCont()}
         >
-            {hover && heartIcon}
-            {hover && addToCartIcon}
+            {heartIcon()}
+            {cartIcon()}
             <img 
                 src={img.url} 
                 alt={`img-${img.id}`} 
