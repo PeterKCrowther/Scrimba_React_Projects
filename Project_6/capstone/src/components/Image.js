@@ -7,6 +7,8 @@ function Image({img, className}) {
     const context = useContext(CapstoneContext); 
     const toggleFavorite = context.toggleFavorite;
     const addImageToCart = context.addImageToCart;
+    const isItemInCart = context.isItemInCart;
+    const removeImageFromCart = context.removeImageFromCart;
 
     const [hover, setHover] = useState(false)
 
@@ -15,14 +17,19 @@ function Image({img, className}) {
         const filledHeartIcon = <i className="ri-heart-fill favorite" onClick={() => (toggleFavorite(img.id))} ></i>
         const isFavorited = img.isFavorite
 
-        return  (isFavorited && filledHeartIcon)
-                ||
-                (hover && emptyHeartIcon)
+        return  (isFavorited && filledHeartIcon) //Is favourited
+                || // OR
+                (hover && emptyHeartIcon) //User is hovering over image
     }
 
     function cartIcon(){
-        const addToCartIcon = <i className="ri-add-circle-line cart"onClick={() => (addImageToCart(img))} ></i>
-        return (hover && addToCartIcon)
+        const addToCartIcon = <i className="ri-add-circle-line cart" onClick={() => (addImageToCart(img))} ></i>
+        const inCartIcon = <i className="ri-shopping-cart-fill cart" onClick={() => (removeImageFromCart(img.id))} ></i>
+        const itemInCart = isItemInCart(img.id);
+
+        return  (itemInCart && inCartIcon) //Item in cart
+                || //OR
+                (hover && addToCartIcon) //User is hovering over image
     } 
 
     function pointerEnteredImgCont() {
