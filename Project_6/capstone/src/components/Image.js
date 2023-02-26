@@ -6,6 +6,8 @@ function Image({img, className}) {
     
     const context = useContext(CapstoneContext); 
     const toggleFavorite = context.toggleFavorite;
+    const addImageToCart = context.addImageToCart;
+
     const [hover, setHover] = useState(false)
 
     function heartIcon() {
@@ -19,11 +21,9 @@ function Image({img, className}) {
     }
 
     function cartIcon(){
-        const addToCartIcon = <i className="ri-add-circle-line cart"></i>
+        const addToCartIcon = <i className="ri-add-circle-line cart"onClick={() => (addImageToCart(img))} ></i>
         return (hover && addToCartIcon)
     } 
-
-    
 
     function pointerEnteredImgCont() {
         setHover(() => true)

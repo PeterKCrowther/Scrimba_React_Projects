@@ -4,6 +4,8 @@ const CapstoneContext = React.createContext();
 function CapstoneContextProvider(props) {
 
     const [photos, setPhotos] = useState([]);
+    const [cartItems, setCartItems] = useState([]);
+
     const jsonUrl = "https://raw.githubusercontent.com/bobziroll/scrimba-react-bootcamp-images/master/images.json"
 
     function toggleFavorite(id) {
@@ -18,6 +20,19 @@ function CapstoneContextProvider(props) {
         )
         setPhotos( () => ( updatedPhotoArr ) )
     }
+
+    function addImageToCart(newImgItem) {
+        setCartItems(
+            (prevCartItems) => ([...prevCartItems, newImgItem])
+        )
+    } 
+
+    useEffect(
+        () => {
+            console.log(cartItems);       
+        }, 
+        [cartItems]
+    )    
 
     useEffect(
         () => {
@@ -38,7 +53,13 @@ function CapstoneContextProvider(props) {
     // )
 
     return (
-        <CapstoneContext.Provider value={ {photos: photos, toggleFavorite: toggleFavorite} }>
+        <CapstoneContext.Provider 
+            value={ {
+                photos: photos, 
+                toggleFavorite: toggleFavorite, 
+                addImageToCart: addImageToCart
+            } }
+        >
             {props.children}
         </CapstoneContext.Provider>
     )
