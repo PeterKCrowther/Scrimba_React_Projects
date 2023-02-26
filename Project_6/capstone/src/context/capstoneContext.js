@@ -27,6 +27,20 @@ function CapstoneContextProvider(props) {
         )
     } 
 
+    function removeImageFromCart(imgItemId) {
+        setCartItems(
+            ( prevItems ) => { 
+                return prevItems.filter( 
+                    (cartItem) => ( cartItem.id !==  imgItemId ) 
+                )
+            }
+        )
+    }
+
+    function isItemInCart(itemId) {
+        return cartItems.find( (cartItem) => ( itemId === cartItem.id ))
+    } 
+
     useEffect(
         () => {
             console.log(cartItems);       
@@ -57,7 +71,9 @@ function CapstoneContextProvider(props) {
             value={ {
                 photos: photos, 
                 toggleFavorite: toggleFavorite, 
-                addImageToCart: addImageToCart
+                addImageToCart: addImageToCart,
+                isItemInCart: isItemInCart,
+                removeImageFromCart: removeImageFromCart
             } }
         >
             {props.children}
