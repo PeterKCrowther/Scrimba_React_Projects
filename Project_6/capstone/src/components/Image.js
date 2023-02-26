@@ -1,5 +1,6 @@
 import React, {useState, useContext} from "react"
 import {CapstoneContext} from "../context/CapstoneContext.js"
+import PropTypes from 'prop-types';
 
 function Image({img, className}) {
     
@@ -47,6 +48,15 @@ function Image({img, className}) {
             />
         </div>
     )
+}
+
+Image.propTypes = {
+    className: PropTypes.string,
+    img: PropTypes.shape({
+        url: PropTypes.string.isRequired,
+        id: PropTypes.string.isRequired,
+        isFavorite: PropTypes.bool
+    }),
 }
 
 export default Image;
