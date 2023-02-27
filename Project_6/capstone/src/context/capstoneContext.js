@@ -70,7 +70,8 @@ function CapstoneContextProvider(props) {
         <CapstoneContext.Provider 
             value={ {
                 photos: photos, 
-                toggleFavorite: toggleFavorite, 
+                toggleFavorite: toggleFavorite,
+                cartItems: cartItems, 
                 addImageToCart: addImageToCart,
                 isItemInCart: isItemInCart,
                 removeImageFromCart: removeImageFromCart
