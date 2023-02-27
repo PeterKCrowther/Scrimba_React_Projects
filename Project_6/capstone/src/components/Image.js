@@ -4,12 +4,7 @@ import PropTypes from 'prop-types';
 
 function Image({img, className}) {
     
-    const context = useContext(CapstoneContext); 
-    const toggleFavorite = context.toggleFavorite;
-    const addImageToCart = context.addImageToCart;
-    const isItemInCart = context.isItemInCart;
-    const removeImageFromCart = context.removeImageFromCart;
-
+    const {toggleFavorite, addImageToCart, isItemInCart, removeImageFromCart} = useContext(CapstoneContext);
     const [hover, setHover] = useState(false)
 
     function heartIcon() {
