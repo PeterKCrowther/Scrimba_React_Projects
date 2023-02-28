@@ -39,7 +39,13 @@ function CapstoneContextProvider(props) {
 
     function isItemInCart(itemId) {
         return cartItems.find( (cartItem) => ( itemId === cartItem.id ))
-    } 
+    }
+    
+    function clearCart(){
+        setCartItems(
+            () => ([])
+        )
+    }
 
     useEffect(
         () => {
@@ -74,7 +80,8 @@ function CapstoneContextProvider(props) {
                 cartItems: cartItems, 
                 addImageToCart: addImageToCart,
                 isItemInCart: isItemInCart,
-                removeImageFromCart: removeImageFromCart
+                removeImageFromCart: removeImageFromCart,
+                clearCart: clearCart
             } }
         >
             {props.children}
