@@ -45,12 +45,12 @@ function CapstoneContextProvider(props) {
         setCartItems( () => ([]) )
     }
 
-    useEffect(
-        () => {
-            console.log(cartItems);       
-        }, 
-        [cartItems]
-    )    
+    // useEffect(
+    //     () => {
+    //         console.log(cartItems);       
+    //     }, 
+    //     [cartItems]
+    // )    
 
     useEffect(
         () => {
