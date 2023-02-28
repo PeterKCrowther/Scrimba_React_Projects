@@ -42,9 +42,7 @@ function CapstoneContextProvider(props) {
     }
     
     function clearCart(){
-        setCartItems(
-            () => ([])
-        )
+        setCartItems( () => ([]) )
     }
 
     useEffect(
