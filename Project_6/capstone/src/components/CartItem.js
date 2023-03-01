@@ -1,5 +1,5 @@
 import React, {useContext, useState} from "react"
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types"
 import {CapstoneContext} from "../context/CapstoneContext"
 
 function CartItem({item, itemCostLocale}) {
@@ -21,9 +21,9 @@ function CartItem({item, itemCostLocale}) {
     )
 }
 
-CartItems.propTypes {
+CartItem.propTypes = {
     item: PropTypes.shape({
-        url: PropTypes.string.isRequired;
+        url: PropTypes.string.isRequired
     })
 }
 
