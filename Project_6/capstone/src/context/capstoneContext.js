@@ -47,7 +47,7 @@ function CapstoneContextProvider(props) {
 
     // useEffect(
     //     () => {
-    //         console.log(cartItems);       
+    //         console.table(cartItems);       
     //     }, 
     //     [cartItems]
     // )    

@@ -1,4 +1,5 @@
 import React, {useContext, useState} from "react"
+import PropTypes from 'prop-types';
 import {CapstoneContext} from "../context/CapstoneContext"
 
 function CartItem({item, itemCostLocale}) {
@@ -19,5 +20,13 @@ function CartItem({item, itemCostLocale}) {
         </div>
     )
 }
+
+CartItems.propTypes {
+    item: PropTypes.shape({
+        url: PropTypes.string.isRequired;
+    })
+}
+
+
 
 export default CartItem
