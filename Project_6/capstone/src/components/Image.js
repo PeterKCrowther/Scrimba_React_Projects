@@ -1,11 +1,13 @@
 import React, {useState, useContext} from "react"
 import {CapstoneContext} from "../context/CapstoneContext.js"
+import useHover from "../hooks/useHover.js";
 import PropTypes from 'prop-types';
 
 function Image({img, className}) {
     
     const {toggleFavorite, addImageToCart, isItemInCart, removeImageFromCart} = useContext(CapstoneContext);
-    const [hover, setHover] = useState(false)
+    //const [hovered, setHovered] = useState(false)
+    const [hovered, ref] = useHover()
 
     function heartIcon() {
         const emptyHeartIcon = <i className="ri-heart-line favorite" onClick={() => (toggleFavorite(img.id))} ></i>
@@ -14,7 +16,7 @@ function Image({img, className}) {
 
         return  (isFavorited && filledHeartIcon) //Is favourited
                 || // OR
-                (hover && emptyHeartIcon) //User is hovering over image
+                (hovered && emptyHeartIcon) //User is hovering over image
     }
 
     function cartIcon(){
@@ -24,22 +26,23 @@ function Image({img, className}) {
 
         return  (itemInCart && inCartIcon) //Item in cart
                 || //OR
-                (hover && addToCartIcon) //User is hovering over image
+                (hovered && addToCartIcon) //User is hovering over image
     } 
 
-    function pointerEnteredImgCont() {
-        setHover(() => true)
-    }
+    // function pointerEnteredImgCont() {
+    //     setHovered(() => true)
+    // }
 
-    function pointerExitedImgCont(){
-        setHover(() => false)        
-    }
+    // function pointerExitedImgCont(){
+    //     setHovered(() => false)        
+    // }
 
     return (
         <div 
             className={`${className} image-container`} 
-            onMouseOver={() => pointerEnteredImgCont()}  
-            onMouseOut={() => pointerExitedImgCont()}
+            ref={ref}
+            // onMouseOver={() => pointerEnteredImgCont()}  
+            // onMouseOut={() => pointerExitedImgCont()}
         >
             {heartIcon()}
             {cartIcon()}
