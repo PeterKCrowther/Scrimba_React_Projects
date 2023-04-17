@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 body {
     background: gainsboro;
 }
@@ -14,7 +18,7 @@ body {
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
-    background: #FFFFFF;
+    /* background: #FFFFFF; */
     box-shadow: 0px 2.98256px 7.4564px rgba(0, 0, 0, 0.1);
     height: 70px;
     border-radius: 15px 15px 0 0;

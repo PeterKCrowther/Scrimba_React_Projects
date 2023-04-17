@@ -3,7 +3,8 @@ import SplashBox from "./components/SplashBox.js";
 import PromoSlider from "./components/PromoSlider.js";
 
 import './App.css';
-import './css/index.css';
+/*import './css/index.css';*/
+import './css/output.css';
 
 /**
  * 
