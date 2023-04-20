@@ -21,9 +21,12 @@ function Photos() {
     )
 
     return (
-        <main className="photos">
-            {imgElements}
-        </main>
+        <>
+            <h1>Home Page</h1>
+            <main className="photos">
+                {imgElements}
+            </main>
+        </>
     )
 }
 
