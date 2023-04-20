@@ -11,7 +11,7 @@ function Header() {
         : <i className="ri-shopping-cart-line ri-fw ri-2x"></i>
 
     return (
-        <header className="bg-red-600">
+        <header>
             <h2><Link to="/">Pic Some</Link></h2>
             <Link to="/cart">{cartIcon}</Link>
         </header>
