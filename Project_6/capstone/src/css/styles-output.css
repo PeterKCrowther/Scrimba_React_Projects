@@ -43,13 +43,14 @@ main.cart-page{
 }
 
 .cart-page > h1,
-.cart-page > h3 {
+.cart-page > h3{
   text-align: center;
 }
 
-.cart-page .total-cost {
+.cart-page .total-cost{
   text-align: right;
-  font-size: 1.3em;
+  font-size: 1rem;
+  line-height: 1.5rem;
 }
 
 .cart-page div.order-button {
@@ -134,8 +135,7 @@ img.image-grid {
   grid-row: span 2;
 }
 
-header {
-  box-shadow: 0px 2px 10px -5px rgba(21,6,5,1);
+header{
   display: flex;
   flex-direction: row;
   align-content: center;
