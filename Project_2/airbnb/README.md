@@ -14,6 +14,14 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
+### `npx tailwindcss -i ./src/css/index.css -o ./src/css/output.css --watch`
+
+Tailwind CLI buid process. Currently creating output in src folder. See here (https://tailwindcss.com/docs/installation) for more information.
+
+### `npx styleguidist server`
+
+React Styleguidist. Runs on (http://localhost:6060/). See here (https://react-styleguidist.js.org/docs/getting-started/) for more information.
+
 ### `npm test`
 
 Launches the test runner in the interactive watch mode.\
