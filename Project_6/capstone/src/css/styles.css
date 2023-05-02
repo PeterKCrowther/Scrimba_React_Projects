@@ -65,52 +65,40 @@ img.image-grid {
   @apply w-full h-full object-cover;
 }
 
-
 .image-container {
   @apply relative;
 }
-
 
 .favorite {
   @apply text-[color:var(--red)] text-[1.2rem] absolute cursor-pointer left-[5px] top-[5px];
 }
 
-
 .ri-heart-fill {
-  opacity: .7;
+  @apply opacity-70;
 }
 
 .ri-delete-bin-line, .ri-delete-bin-fill {
   font-size: 1.3em;
-  cursor: pointer;
+  @apply text-[1.3em] cursor-pointer;
 }
 
 .cart {
-  color: var(--blue);
-  font-size: 1.2rem;
-  position: absolute;
-  top: 5px;
-  right: 5px;
-  cursor: pointer;
+  @apply text-[color:var(--blue)] text-[1.2rem] absolute cursor-pointer right-[5px] top-[5px];
 }
-
 .wide {
-  grid-column: span 2;
+  @apply col-[span_2];
 }
 
 .tall {
-  grid-row: span 2;
+  @apply row-[span_2];
 }
-
 .big {
-  grid-column: span 2;
-  grid-row: span 2;
+  @apply col-[span_2] row-[span_2];
 }
 
 header {
   @apply bg-red-600 flex flex-row shadow-xl justify-between content-center items-center px-5 py-1 text-white shadow-sm;
 }
-
 
 a {
   @apply no-underline;

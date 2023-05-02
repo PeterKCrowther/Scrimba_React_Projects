@@ -112,33 +112,33 @@ img.image-grid{
   color: var(--red);
 }
 
-.ri-heart-fill {
-  opacity: .7;
+.ri-heart-fill{
+  opacity: 0.7;
 }
 
 .ri-delete-bin-line, .ri-delete-bin-fill {
+  cursor: pointer;
   font-size: 1.3em;
-  cursor: pointer;
 }
 
-.cart {
-  color: var(--blue);
-  font-size: 1.2rem;
+.cart{
   position: absolute;
-  top: 5px;
   right: 5px;
+  top: 5px;
   cursor: pointer;
+  font-size: 1.2rem;
+  color: var(--blue);
 }
 
-.wide {
+.wide{
   grid-column: span 2;
 }
 
-.tall {
+.tall{
   grid-row: span 2;
 }
 
-.big {
+.big{
   grid-column: span 2;
   grid-row: span 2;
 }
